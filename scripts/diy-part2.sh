@@ -244,13 +244,11 @@ mkdir quectel_cm_5G
 mkdir quectel_MHI
 mkdir luci-app-hypermodem
 mkdir luci-app-cpe
-mkdir luci-app-gobinetmodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
 cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
 cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 cp -rf ../../Modem-Support/luci-app-cpe/* luci-app-cpe
-cp -rf ../../Modem-Support/luci-app-gobinetmodem/* luci-app-gobinetmodem
 
 # 5G模组短信插件
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
@@ -273,14 +271,11 @@ svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3gin
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
-mkdir luci-app-usbmodem
 mkdir luci-app-modem
 mkdir luci-app-pcimodem
-mkdir ext-rooter-basic
-cp -rf ../../Modem-Support/luci-app-usbmodem/* luci-app-usbmodem
+
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
 cp -rf ../../Modem-Support/luci-app-pcimodem/* luci-app-pcimodem
-cp -rf ../../Modem-Support/rooter/ext-rooter-basic/* ext-rooter-basic
 popd
 
 # 5G模组拨号脚本
@@ -471,7 +466,6 @@ CONFIG_PACKAGE_luci-app-gobinetmodem=y
 CONFIG_PACKAGE_luci-app-usbmodem=y
 CONFIG_PACKAGE_luci-app-modem=y
 CONFIG_PACKAGE_luci-app-pcimodem=y
-CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 串口调试工具
 CONFIG_PACKAGE_minicom=y
