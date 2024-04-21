@@ -26,17 +26,17 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 移除ddns
-# sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/CONFIG_PACKAGE_ddns-scripts=n/' .config
-# sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/CONFIG_PACKAGE_ddns-scripts-cloudflare=n/' .config
-# sed -i 's/CONFIG_PACKAGE_ddns-scripts-dnspod=y/CONFIG_PACKAGE_ddns-scripts-dnspod=n/' .config
-# sed -i 's/CONFIG_PACKAGE_ddns-scripts-services=y/CONFIG_PACKAGE_ddns-scripts-services=n/' .config
-# sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/CONFIG_PACKAGE_ddns-scripts_aliyun=n/' .config
-# sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/CONFIG_PACKAGE_luci-app-ddns=n/' .config
-# sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/CONFIG_PACKAGE_ddns-scripts=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/CONFIG_PACKAGE_ddns-scripts-cloudflare=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-dnspod=y/CONFIG_PACKAGE_ddns-scripts-dnspod=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts-services=y/CONFIG_PACKAGE_ddns-scripts-services=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/CONFIG_PACKAGE_ddns-scripts_aliyun=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/CONFIG_PACKAGE_luci-app-ddns=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n/' .config
 # 移除ddnsto
-# sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
-# sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
-# sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=n/' .config
+sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=n/' .config
 
 # 移除网卡驱动
 # sed -i 's/CONFIG_PACKAGE_kmod-ath=y/CONFIG_PACKAGE_kmod-ath=n/' .config
@@ -71,10 +71,10 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # sed -i 's/CONFIG_PACKAGE_kmod-rtw88=y/CONFIG_PACKAGE_kmod-rtw88=n/' .config
 
 # # 移除 uhttpd
-# sed -i 's/CONFIG_PACKAGE_uhttpd=y/CONFIG_PACKAGE_uhttpd=n/' .config
-# sed -i 's/CONFIG_PACKAGE_uhttpd-mod-ubus=y/CONFIG_PACKAGE_uhttpd-mod-ubus=n/' .config
-# sed -i 's/CONFIG_PACKAGE_libiwinfo-lua=y/CONFIG_PACKAGE_libiwinfo-lua=n/' .config
-# sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
+sed -i 's/CONFIG_PACKAGE_uhttpd=y/CONFIG_PACKAGE_uhttpd=n/' .config
+sed -i 's/CONFIG_PACKAGE_uhttpd-mod-ubus=y/CONFIG_PACKAGE_uhttpd-mod-ubus=n/' .config
+sed -i 's/CONFIG_PACKAGE_libiwinfo-lua=y/CONFIG_PACKAGE_libiwinfo-lua=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-ssl-openssl=y/CONFIG_PACKAGE_luci-ssl-openssl=n/' .config
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
@@ -152,12 +152,12 @@ cp -rf ../../kiddin9/luci-app-onliner/* luci-app-onliner
 # cp -rf ../../kiddin9/v2ray-plugin/* v2ray-plugin
 # cp -rf ../../kiddin9/trojan/* trojan
 #Passwall和Passwall2
-# svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
-# svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
-# svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk openwrt-passwall
+svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+svn export https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2
 #VSSR（Hello Word）
-# svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
-# svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
+svn export https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
+svn export https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 #OpenClash
 # svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-openclash temp/luci-app-openclash
@@ -243,10 +243,14 @@ mkdir quectel_QMI_WWAN
 mkdir quectel_cm_5G
 mkdir quectel_MHI
 mkdir luci-app-hypermodem
+mkdir luci-app-cpe
+mkdir luci-app-gobinetmodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
 cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
 cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
+cp -rf ../../Modem-Support/luci-app-cpe/* luci-app-cpe
+cp -rf ../../Modem-Support/luci-app-gobinetmodem/* luci-app-gobinetmodem
 
 # 5G模组短信插件
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
@@ -254,23 +258,29 @@ cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 # svn export https://github.com/Siriling/OpenWRT-MyConfig/trunk/configs/istoreos/general/applications/luci-app-sms-tool temp/luci-app-sms-tool
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
 mkdir sms-tool
-mkdir luci-app-sms-tool
+# mkdir luci-app-sms-tool
 cp -rf ../../Modem-Support/sms-tool/* sms-tool
-cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
-cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
+# cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
+# cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
-# svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
+svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
+svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
+svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组信息插件+AT工具
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/sendat
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-cpe
 # svn export https://github.com/dwj0/luci-app-sms-tool/trunk/sms-tool
 # svn export https://github.com/Siriling/5G-Modem-Support/trunk/luci-app-modem
+mkdir luci-app-usbmodem
 mkdir luci-app-modem
+mkdir luci-app-pcimodem
+mkdir ext-rooter-basic
+cp -rf ../../Modem-Support/luci-app-usbmodem/* luci-app-usbmodem
 cp -rf ../../Modem-Support/luci-app-modem/* luci-app-modem
+cp -rf ../../Modem-Support/luci-app-pcimodem/* luci-app-pcimodem
+cp -rf ../../Modem-Support/rooter/ext-rooter-basic/* ext-rooter-basic
 popd
 
 # 5G模组拨号脚本
@@ -433,7 +443,7 @@ echo "
 CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 5G模组短信插件
-CONFIG_PACKAGE_luci-app-sms-tool=y
+# CONFIG_PACKAGE_luci-app-sms-tool=y
 
 # 5G模组信息插件
 CONFIG_PACKAGE_luci-app-3ginfo-lite=y
@@ -447,15 +457,21 @@ CONFIG_PACKAGE_luci-app-modem=y
 
 # QMI拨号工具（移远，广和通）
 CONFIG_PACKAGE_quectel-CM-5G=y
-CONFIG_PACKAGE_fibocom-dial=y
+CONFIG_PACKAGE_quectel_MHI=y
+# CONFIG_PACKAGE_fibocom-dial=y
 
 # QMI拨号软件
+CONFIG_PACKAGE_quectel_QMI_WWAN=y
 CONFIG_PACKAGE_kmod-qmi_wwan_f=y
 CONFIG_PACKAGE_luci-app-hypermodem=y
 
 # Gobinet拨号软件
 CONFIG_PACKAGE_kmod-gobinet=y
 CONFIG_PACKAGE_luci-app-gobinetmodem=y
+CONFIG_PACKAGE_luci-app-usbmodem=y
+CONFIG_PACKAGE_luci-app-modem=y
+CONFIG_PACKAGE_luci-app-pcimodem=y
+CONFIG_PACKAGE_ext-rooter-basic=y
 
 # 串口调试工具
 CONFIG_PACKAGE_minicom=y
